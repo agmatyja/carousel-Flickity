@@ -5,27 +5,54 @@
 		<link rel="stylesheet" type="text/css" href="vendor/normalize.css">
 		<link rel="stylesheet" type="text/css" href="vendor/flickity.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		
 		<title>carousel-Flickity</title>
 	</head>
 	
 	<body>
-		<div class="main-carousel">
-			<div class="carousel-cell" id="carousel-cell1" style="background-image:url('images/coliseo_roma_atardecer-1080x640.jpg');"><div class="container" ><p>lovely place - Roma</p></div></div>
-			<div class="carousel-cell" id="carousel-cell2" style="background-image:url('images/arcos-palacios-nazaries-alhambra.jpg');" ><div class="container"><p>lovely place - Alhambra</p></div></div>
-			<div class="carousel-cell" id="carousel-cell3" style="background-image:url('images/sunset-opera-house-1080x640.jpg');"><div class="container"><p>lovely place - Sydney</p></div></div>
-			<div class="carousel-cell" id="carousel-cell4" style="background-image:url('images/PrImg_3767.jpg');"><div class="container" ><p>lovely place -Paris</p></div></div>
-			<div class="carousel-cell" id="carousel-cell5" style="background-image:url('images/YELLOWSTONE LAKE.ngsversion.1440098683339.adapt.1900.1.jpg');"><div class="container"><p>lovely place - Yellowstone</p></div></div>  
-		</div>
+	
+		<div class="main-carousel" id="carousel"></div>
+			  
 		<button class="reset">Reset</button>
 		
+		<script>
+		var placesData = [
+			{
+				image: 'carousel-cell1', 
+				title: 'Roma',
+				description: '<p>Lorem ipsum.</p> <img src="images/coliseo_roma_atardecer-1080x640.jpg" alt="Photo placeholder">'
+			},
+			{
+				image: 'carousel-cell2', 
+				title: 'Alhambra',
+				description: '<p>Lorem ipsum.</p> <img src="images/arcos-palacios-nazaries-alhambra.jpg" alt="Photo placeholder">'
+			},
+			{
+				image: 'carousel-cell3', 
+				title: 'Sydney',
+				description: '<p>Lorem ipsum.</p> <img src="images/sunset-opera-house-1080x640.jpg" alt="Photo placeholder">'
+			},
+			{
+				image: 'carousel-cell4', 
+				title: 'Paris',
+				description: '<p>Lorem ipsum.</p> <img src="images/PrImg_3767.jpg" alt="Photo placeholder">'
+			},
+			{
+				image: 'carousel-cell5', 
+				title: 'Yellowstone',
+				description: '<p>Lorem ipsum.</p> <img src="images/YELLOWSTONE LAKE.ngsversion.1440098683339.adapt.1900.1.jpg" alt="Photo placeholder">'
+			}
+		];
+		</script>
+		
+		<script id="template-item" type="x-tmpl-mustache">
+			<div class="carousel-cell" id="{{image}}"><div class="container" ><h2>{{title}}</h2>{{{description}}}</div></div>
+		</script>
 		
 		<div class="progress-bar"></div>
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="vendor/hash.js"></script>
+		<script src="vendor/mustache.js"></script>
 		<script src="js/script.js"></script>
-		
-		
 		
 	</body>
 </html>

@@ -1,7 +1,18 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
+			
+	var templateItem = document.getElementById('template-item').innerHTML;
+				
+	Mustache.parse(templateItem);
+	
+	var listItems = '';
+	
+	for(var i = 0; i < placesData.length; i++){
+		listItems += Mustache.render(templateItem, placesData[i]);
+	}
+	 
+	document.getElementById("carousel").insertAdjacentHTML('beforeend', listItems);
 
 	var flkty = new Flickity( '.main-carousel', {
-	  // options
 	  cellAlign: 'left',
 	  contain: true,
 	  pageDots: false,
@@ -18,5 +29,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	restartBtn.addEventListener('click', function () {
 		flkty.select( 0 );
 	});
-
 });
