@@ -24,8 +24,25 @@
   background: #333;
 }
 
-button {
+.reset {
   position: absolute;
   top: 0;
+}
+
+cMap {
+  position: absolute;
+  top: 360px;
+}
+
+cSmooth {
+  position: absolute;
+  top: 380px;
+}
+
+#map {
+  height: 45vh;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
 }
 /*# sourceMappingURL=style.css.map */

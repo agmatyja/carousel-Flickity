@@ -19,27 +19,32 @@
 			{
 				image: 'carousel-cell1', 
 				title: 'Roma',
-				description: '<p>Lorem ipsum.</p> <img src="images/coliseo_roma_atardecer-1080x640.jpg" alt="Photo placeholder">'
+				description: '<p>Lorem ipsum.</p> <img src="images/coliseo_roma_atardecer-1080x640.jpg" alt="Photo placeholder">',
+				coords: {lat: 41.8901933, lng: 12.4918726}
 			},
 			{
 				image: 'carousel-cell2', 
 				title: 'Alhambra',
-				description: '<p>Lorem ipsum.</p> <img src="images/arcos-palacios-nazaries-alhambra.jpg" alt="Photo placeholder">'
+				description: '<p>Lorem ipsum.</p> <img src="images/arcos-palacios-nazaries-alhambra.jpg" alt="Photo placeholder">',
+				coords: {lat: 38.8992926, lng: -3.0540374},
 			},
 			{
 				image: 'carousel-cell3', 
 				title: 'Sydney',
-				description: '<p>Lorem ipsum.</p> <img src="images/sunset-opera-house-1080x640.jpg" alt="Photo placeholder">'
+				description: '<p>Lorem ipsum.</p> <img src="images/sunset-opera-house-1080x640.jpg" alt="Photo placeholder">',
+				coords: {lat: -33.874237, lng: 151.198517}
 			},
 			{
 				image: 'carousel-cell4', 
 				title: 'Paris',
-				description: '<p>Lorem ipsum.</p> <img src="images/PrImg_3767.jpg" alt="Photo placeholder">'
+				description: '<p>Lorem ipsum.</p> <img src="images/PrImg_3767.jpg" alt="Photo placeholder">',
+				coords: {lat: 48.858225, lng: 2.2923403},
 			},
 			{
 				image: 'carousel-cell5', 
 				title: 'Yellowstone',
-				description: '<p>Lorem ipsum.</p> <img src="images/YELLOWSTONE LAKE.ngsversion.1440098683339.adapt.1900.1.jpg" alt="Photo placeholder">'
+				description: '<p>Lorem ipsum.</p> <img src="images/YELLOWSTONE LAKE.ngsversion.1440098683339.adapt.1900.1.jpg" alt="Photo placeholder">',
+				coords: {lat: 44.4171898, lng: -110.5701054},
 			}
 		];
 		</script>
@@ -47,13 +52,24 @@
 		<script id="template-item" type="x-tmpl-mustache">
 			<div class="carousel-cell" id="{{image}}"><div class="container" ><h2>{{title}}</h2>{{{description}}}</div></div>
 		</script>
-		
-		<div class="progress-bar"></div>
+		<div class="progress-bar"></div
+		<span class="metadata-marker" style="display: none;" data-region_tag="html-body"></span> 
+	
+		<div id="page-wrapper" class="container">
+			<h3>My Google Maps Demo</h3>
+			<button class="cMap" id="center-map">Center map</button>
+			<button class="cSmooth" id="center-smooth">Center smoothly</button>
+
+			<p id="infos"></p>
+			<div id="map"></div>
+		</div>
+	
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="vendor/hash.js"></script>
 		<script src="vendor/mustache.js"></script>
 		<script src="js/script.js"></script>
 		
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJUTPydGAimC-c88u_WQ1kCTegpHY52eM&callback=initMap"></script>	
 	</body>
 </html>
 
